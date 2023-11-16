@@ -42,7 +42,7 @@ public class QuestionService {
         Pageable pageable = PageRequest.of(page, 10, Sort.by(sorts));
         return this.questionRepository.findAll(pageable);
     }
-
+    // da
     public void create(String subject, String content) {
         Question q = new Question();
         q.setSubject(subject);
