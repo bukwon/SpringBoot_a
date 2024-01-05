@@ -1,19 +1,17 @@
 package com.example.hellospring.controller;
 
-import com.example.hellospring.HelloSpringApplication;
-import org.springframework.ui.Model;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class helloController {
+public class HelloController {
 
     @GetMapping("hello")
     public String hello(Model model) {
-        model.addAttribute("data", "hello");
+        model.addAttribute("data", "spring!!");
         return "hello";
     }
 
@@ -26,7 +24,7 @@ public class helloController {
     @GetMapping("hello-string")
     @ResponseBody
     public String helloString(@RequestParam("name") String name) {
-        return "hello " + name; //hello spring
+        return "hello" + name;
     }
 
     @GetMapping("hello-api")
@@ -37,15 +35,13 @@ public class helloController {
         return hello;
     }
 
-    public class Hello {
+    static class Hello {
+        private String name;
         public String getName() {
-            return Name;
+            return name;
         }
-
         public void setName(String name) {
-            Name = name;
+            this.name = name;
         }
-
-        private String Name;
     }
 }
