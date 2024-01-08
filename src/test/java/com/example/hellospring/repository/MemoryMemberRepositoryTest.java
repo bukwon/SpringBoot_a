@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static com.example.hellospring.repository.MemoryMemberRepository.store;
 import static org.assertj.core.api.Assertions.*;
 
 public class MemoryMemberRepositoryTest {
@@ -57,9 +56,5 @@ public class MemoryMemberRepositoryTest {
         List<Member> result = repository.findAll();
 
         assertThat(result.size()).isEqualTo(2);
-    }
-
-    public void clearStore() {
-        store.clear();
     }
 }
